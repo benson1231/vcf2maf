@@ -1,3 +1,11 @@
+```bash
+docker compose run --rm vcf2maf
+
+perl ../src/vcf2maf.pl --input-vcf ../data/test.vcf --output-maf ../data/test.vep.maf --tumor-id EH-25001_AA017772   --ref-fasta /root/.vep/homo_sapiens/112_GRCh38/Homo_sapiens.GRCh38.dna.toplevel.fa --vep-path /opt/conda/envs/vep/bin --ncbi-build GRCh38
+```
+
+---
+
 vcf<img src="https://i.giphy.com/R6X7GehJWQYms.gif" width="28">maf
 =======
 

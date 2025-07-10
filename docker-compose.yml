@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  vcf2maf:
+    image: benson1231/vep-env:v1
+    container_name: vep-container
+    stdin_open: true
+    tty: true
+    working_dir: /workdir
+    env_file:
+      - .env
+    volumes:
+      - ${HOST_WORKDIR}:/src
+      - ${HOST_VEP_CACHE}:/root/.vep
+      - ${HOST_DATA_DIR}:/data
+    entrypoint: /bin/bash
