@@ -1,7 +1,21 @@
+> ✨ This repo is built upon the official ['vcf2maf' project](https://github.com/mskcc/vcf2maf). We have only containerized and automated the runtime environment; all original source code and intellectual property belong to the original author.
+
+> Before running vcf2maf, you need to prepare the required VEP cache and reference data. First, follow this discussion thread to download the correct VEP cache and reference files in [follow this gist](https://gist.github.com/ckandoth/4bccadcacd58aad055ed369a78bf2e7c)
+
+> Before running the container, make sure to edit the ['.env'](.env) file with the correct absolute paths on your host machine:
+
 ```bash
+# Run the "vcf2maf" service using Docker Compose
 docker compose run --rm vcf2maf
 
-perl ../src/vcf2maf.pl --input-vcf ../data/test.vcf --output-maf ../data/test.vep.maf --tumor-id EH-25001_AA017772   --ref-fasta /root/.vep/homo_sapiens/112_GRCh38/Homo_sapiens.GRCh38.dna.toplevel.fa --vep-path /opt/conda/envs/vep/bin --ncbi-build GRCh38
+# Execute the vcf2maf.pl script to convert a VCF file to MAF format
+perl ../src/vcf2maf.pl \
+  --input-vcf ../data/test.vcf \
+  --output-maf ../data/test.vep.maf \
+  --tumor-id EH-25001_AA017772 \
+  --ref-fasta /root/.vep/homo_sapiens/112_GRCh38/Homo_sapiens.GRCh38.dna.toplevel.fa \
+  --vep-path /opt/conda/envs/vep/bin \
+  --ncbi-build GRCh38
 ```
 
 ---
